@@ -1,0 +1,10 @@
+com\pratocerto\service\PedidoService.class
+com\pratocerto\controller\PedidoController.class
+com\pratocerto\dto\ItemPedidoDTO.class
+com\pratocerto\repository\PedidoRepository.class
+com\pratocerto\model\Pedido.class
+com\pratocerto\config\CorsConfig$1.class
+com\pratocerto\dto\PedidoDTO.class
+com\pratocerto\model\ItemPedido.class
+com\pratocerto\PratoCertoApplication.class
+com\pratocerto\config\CorsConfig.class
