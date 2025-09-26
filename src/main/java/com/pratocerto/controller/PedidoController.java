@@ -32,4 +32,6 @@ public class PedidoController {
         return pedidoService.buscar(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable Long id) { pedidoService.deletar(id);}
 }

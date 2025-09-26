@@ -2,6 +2,7 @@
 
     import jakarta.persistence.*;
     import lombok.Data;
+    import java.time.LocalTime;
     import java.util.List;
 
     @Data
@@ -14,7 +15,7 @@
 
         private String cliente;
         private String status;
-        private String hora;
+        private LocalTime hora;
         private String endereco;
         private Double total;
         private String observacoes;

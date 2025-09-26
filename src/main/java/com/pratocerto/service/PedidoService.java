@@ -5,7 +5,7 @@ import com.pratocerto.model.ItemPedido;
 import com.pratocerto.model.Pedido;
 import com.pratocerto.repository.PedidoRepository;
 import org.springframework.stereotype.Service;
-
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -29,7 +29,7 @@ public class PedidoService {
         Pedido pedido = new Pedido();
         pedido.setCliente(dto.getCliente());
         pedido.setEndereco(dto.getEndereco());
-        pedido.setHora(dto.getHora());
+        pedido.setHora(LocalTime.now());
         pedido.setTelefone(dto.getTelefone());
         pedido.setObservacoes(dto.getObservacoes());
         pedido.setStatus(dto.getStatus());
@@ -52,5 +52,12 @@ public class PedidoService {
     public Pedido buscar(Long id) {
         return pedidoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pedido não encontrado com ID: " + id));
+    }
+
+    public void deletar(Long id) {
+        if (!pedidoRepository.existsById(id)) {
+            throw new RuntimeException("Pedido não encontrado com ID: " + id);
+        }
+        pedidoRepository.deleteById(id);
     }
 }
